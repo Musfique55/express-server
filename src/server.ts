@@ -1,11 +1,8 @@
 import express, { Request, Response } from "express";
-import dotenv from "dotenv";
-import path from "path";
 import { config } from "./config";
-import { initDB, pool } from "./config/db";
+import { initDB } from "./config/db";
 import { userRoutes } from "./modules/user/user.route";
 
-dotenv.config({ path: path.join(process.cwd(), ".env") });
 const app = express();
 const port = config.port;
 app.use(express.json());
