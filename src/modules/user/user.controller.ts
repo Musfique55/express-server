@@ -47,7 +47,7 @@ const updateUser = async (req: Request, res: Response) => {
   try {
     const result = await userServices.updateUser(name,age,id!);
     if (!result.rowCount) {
-     return res.status(404).json({
+      res.status(404).json({
         message: "user not found",
         success: false,
       });

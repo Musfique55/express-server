@@ -3,11 +3,10 @@ import { userControllers } from "./user.controller";
 
 const router = Router();
 
-const getUsers = router.get('/',userControllers.getUsers);
-const createUser = router.post('/',userControllers.createUser);
-const getSingleUser = router.get('/:id',userControllers.getSingleUser);
-const updateUser = router.put('/:id',userControllers.updateUser);
-const deleteUser = router.delete('/:id',userControllers.deleteUser);
-
+router.get("/", userControllers.getUsers);
+router.post("/", userControllers.createUser);
+router.get("/:id", userControllers.getSingleUser);
+router.put("/:id", userControllers.updateUser);
+router.delete("/:id", userControllers.deleteUser);
 
 export const userRoutes = router;
