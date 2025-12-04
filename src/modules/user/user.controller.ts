@@ -91,9 +91,8 @@ const deleteUser = async (req: Request, res: Response) => {
 }
 
 const createUser = async (req: Request, res: Response) => {
-  const { name, age } = req.body;
   try {
-    const result = await userServices.createUser(name,age);
+    const result = await userServices.createUser(req.body);
 
     res.status(201).json({
       message: "user created sucessfully",

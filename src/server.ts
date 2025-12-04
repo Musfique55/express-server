@@ -3,6 +3,7 @@ import { config } from "./config";
 import { initDB } from "./config/db";
 import { userRoutes } from "./modules/user/user.route";
 import { todosRoute } from "./modules/todo/todo.route";
+import { authRoutes } from "./modules/auth/auth.routes";
 
 const app = express();
 const port = config.port;
@@ -17,10 +18,14 @@ app.get("/", (req: Request, res: Response) => {
   res.send("Hello Woo!");
 });
 
-// users crud
+//* users crud
 app.use("/users",userRoutes);
-// todos crud
+
+//* todos crud
 app.use("/todos",todosRoute);
+
+//* auth
+app.use("/auth",authRoutes);
 
 
 app.listen(port, () => {

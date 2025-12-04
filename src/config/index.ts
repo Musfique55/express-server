@@ -5,5 +5,6 @@ import path from "path";
 
 export const config = {
     connectionString : process.env.CONNECTION_STR,
-    port : process.env.PORT
+    port : process.env.PORT,
+    jwt_secret : process.env.JWT_SECRET
 };
